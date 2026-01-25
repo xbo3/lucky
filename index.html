@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>럭키비키 3주년 기념 보너스</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;color:#fff;overflow-x:hidden}
@@ -65,15 +65,16 @@ body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;colo
 .anni-title{font-size:26px;font-weight:900;margin-bottom:8px}
 .anni-sub{display:inline-block;background:rgba(0,0,0,0.2);padding:8px 16px;border-radius:10px;font-size:13px}
 
-/* 보너스 카드 */
-.bonus-card{background:linear-gradient(180deg,#1a1a2e,#12121a);border:1px solid rgba(74,222,128,0.2);border-radius:20px;overflow:hidden;margin-bottom:24px;padding:24px}
-.bonus-title{font-size:22px;font-weight:900;text-align:center;margin-bottom:24px;color:#ffd700;text-shadow:0 0 10px rgba(255,215,0,0.5),0 0 20px rgba(255,215,0,0.3)}
-.bonus-values{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.bonus-val{padding:16px 24px;border-radius:14px;font-size:22px;font-weight:900;-webkit-text-stroke:1px rgba(255,255,255,0.2)}
-.bonus-val.point{background:rgba(34,197,94,0.2);border:2px solid #22c55e;color:#4ade80;text-shadow:0 0 10px rgba(74,222,128,0.6),0 0 20px rgba(74,222,128,0.4),0 0 30px rgba(74,222,128,0.2)}
-.bonus-val.plus{color:#fff;font-size:24px;background:none;padding:0 8px;text-shadow:0 0 10px rgba(255,255,255,0.5)}
-.bonus-val.gift{background:rgba(139,92,246,0.2);border:2px solid #8b5cf6;color:#a78bfa;text-shadow:0 0 10px rgba(139,92,246,0.6),0 0 20px rgba(139,92,246,0.4),0 0 30px rgba(139,92,246,0.2)}
-.bonus-note{font-size:11px;color:#666;margin-top:16px;text-align:center}
+/* 보너스 섹션 */
+.bonus-section{background:#1e1e28;border-radius:16px;padding:40px 20px;margin-bottom:24px;text-align:center}
+.bonus-title{font-family:'Black Han Sans','Noto Sans KR',sans-serif;font-size:28px;font-weight:900;color:#fff;margin-bottom:35px}
+.bonus-boxes{display:flex;align-items:center;justify-content:center;gap:15px}
+.bonus-box{padding:16px 30px;border-radius:10px;font-family:'Black Han Sans','Noto Sans KR',sans-serif;font-size:22px;font-weight:900}
+.bonus-box.points{background:#4ade80;color:#fff}
+.bonus-box.gift{background:transparent;border:3px solid #06b6d4;color:#fff}
+.bonus-box.gift .label{color:#facc15}
+.bonus-plus{font-size:28px;font-weight:900;color:#fff}
+.bonus-note{margin-top:25px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:500;color:#555}
 
 /* 기프티콘 섹션 */
 .gifticon-section{margin-bottom:24px}
@@ -166,13 +167,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;colo
 <div class="anni-sub">🎰 슬롯 전용 보너스</div>
 </div>
 
-<!-- 보너스 카드 -->
-<div class="bonus-card">
-<h2 class="bonus-title">💰 200,000원 입금시 3주년 혜택</h2>
-<div class="bonus-values">
-<span class="bonus-val point">100,000P</span>
-<span class="bonus-val plus">+</span>
-<span class="bonus-val gift">기프티콘 50,000원</span>
+<!-- 보너스 섹션 -->
+<div class="bonus-section">
+<h2 class="bonus-title">200,000원 입금시 3주년 혜택</h2>
+<div class="bonus-boxes">
+<div class="bonus-box points">100,000</div>
+<span class="bonus-plus">+</span>
+<div class="bonus-box gift"><span class="label">기프티콘</span> 50,000</div>
 </div>
 <p class="bonus-note">* 슬롯 게임 전용 보너스</p>
 </div>
