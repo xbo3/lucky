@@ -66,21 +66,14 @@ body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;colo
 .anni-sub{display:inline-block;background:rgba(0,0,0,0.2);padding:8px 16px;border-radius:10px;font-size:13px}
 
 /* 보너스 카드 */
-.bonus-card{background:linear-gradient(180deg,#1a1a2e,#12121a);border:1px solid rgba(74,222,128,0.2);border-radius:20px;overflow:hidden;margin-bottom:24px}
-.bonus-header{display:flex;align-items:center;gap:14px;padding:20px;border-bottom:1px solid rgba(255,255,255,0.05)}
-.bonus-icon{width:50px;height:50px;background:linear-gradient(135deg,#4ade80,#22c55e);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px}
-.bonus-label .small{font-size:11px;color:#888}
-.bonus-label .large{font-size:18px;font-weight:800;color:#4ade80;margin-top:2px}
-
-.bonus-body{padding:20px}
-.bonus-box{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.15);border-radius:14px;padding:20px;text-align:center}
-.bonus-condition{font-size:13px;color:#aaa;margin-bottom:10px}
-.bonus-values{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.bonus-val{padding:10px 16px;border-radius:10px;font-size:18px;font-weight:800}
-.bonus-val.point{background:#22c55e;color:#fff}
-.bonus-val.plus{color:#4ade80;font-size:20px;background:none;padding:0}
-.bonus-val.gift{background:#8b5cf6;color:#fff}
-.bonus-note{font-size:10px;color:#666;margin-top:12px}
+.bonus-card{background:linear-gradient(180deg,#1a1a2e,#12121a);border:1px solid rgba(74,222,128,0.2);border-radius:20px;overflow:hidden;margin-bottom:24px;padding:24px}
+.bonus-title{font-size:22px;font-weight:900;text-align:center;margin-bottom:24px;color:#ffd700;text-shadow:0 0 10px rgba(255,215,0,0.5),0 0 20px rgba(255,215,0,0.3)}
+.bonus-values{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.bonus-val{padding:16px 24px;border-radius:14px;font-size:22px;font-weight:900;-webkit-text-stroke:1px rgba(255,255,255,0.2)}
+.bonus-val.point{background:rgba(34,197,94,0.2);border:2px solid #22c55e;color:#4ade80;text-shadow:0 0 10px rgba(74,222,128,0.6),0 0 20px rgba(74,222,128,0.4),0 0 30px rgba(74,222,128,0.2)}
+.bonus-val.plus{color:#fff;font-size:24px;background:none;padding:0 8px;text-shadow:0 0 10px rgba(255,255,255,0.5)}
+.bonus-val.gift{background:rgba(139,92,246,0.2);border:2px solid #8b5cf6;color:#a78bfa;text-shadow:0 0 10px rgba(139,92,246,0.6),0 0 20px rgba(139,92,246,0.4),0 0 30px rgba(139,92,246,0.2)}
+.bonus-note{font-size:11px;color:#666;margin-top:16px;text-align:center}
 
 /* 기프티콘 섹션 */
 .gifticon-section{margin-bottom:24px}
@@ -175,24 +168,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;colo
 
 <!-- 보너스 카드 -->
 <div class="bonus-card">
-<div class="bonus-header">
-<div class="bonus-icon">💰</div>
-<div class="bonus-label">
-<p class="small">3주년 특별 혜택</p>
-<p class="large">20% + 기프티콘 15%</p>
-</div>
-</div>
-<div class="bonus-body">
-<div class="bonus-box">
-<p class="bonus-condition">200,000원 입금 시</p>
+<h2 class="bonus-title">💰 200,000원 입금시 3주년 혜택</h2>
 <div class="bonus-values">
 <span class="bonus-val point">100,000P</span>
 <span class="bonus-val plus">+</span>
 <span class="bonus-val gift">기프티콘 50,000원</span>
 </div>
-</div>
 <p class="bonus-note">* 슬롯 게임 전용 보너스</p>
-</div>
 </div>
 
 <!-- 기프티콘 섹션 -->
