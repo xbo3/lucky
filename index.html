@@ -19,9 +19,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;colo
 
 .container{max-width:480px;margin:0 auto;padding:0 0 20px;min-height:100vh}
 
-/* 상단 동영상 */
-.hero-video{width:100%;margin-bottom:20px;border-radius:0 0 20px 20px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
-.hero-video video{width:100%;display:block}
+/* 상단 동영상 - 타원 클리핑으로 워터마크 제거 */
+.hero-video{width:100%;margin-bottom:20px;display:flex;justify-content:center;overflow:hidden}
+.hero-video video{width:100%;display:block;clip-path:ellipse(42% 38% at 50% 50%)}
 
 /* 헤더 */
 .header{text-align:center;padding:20px 20px 20px}
