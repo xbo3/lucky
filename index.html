@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>럭키비키 3주년 기념 보너스</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans KR',sans-serif;background:#000;min-height:100vh;color:#fff;overflow-x:hidden}
+
+/* 프리미엄 배경 */
+.bg{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 0%,#1a1a2e 0%,#0a0a0f 50%,#000 100%);z-index:-2}
+
+/* 골드 파티클 */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.particle{position:absolute;width:4px;height:4px;background:#ffd700;border-radius:50%;opacity:0;animation:float 15s infinite}
+@keyframes float{0%{transform:translateY(100vh);opacity:0}10%{opacity:0.8}90%{opacity:0.8}100%{transform:translateY(-20vh);opacity:0}}
+
+.container{max-width:480px;margin:0 auto;padding:0 0 20px;min-height:100vh}
+
+/* 상단 동영상 */
+.hero-video{width:100%;margin-bottom:20px;border-radius:0 0 20px 20px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.hero-video video{width:100%;display:block}
+
+/* 헤더 */
+.header{text-align:center;padding:20px 20px 20px}
+.brand{font-size:32px;font-weight:900;background:linear-gradient(135deg,#4ade80,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.brand-sub{font-size:11px;color:#888;letter-spacing:3px;margin-top:4px}
+
+.content{padding:0 20px}
+
+/* 알림 박스 */
+.alert-box{position:relative;background:linear-gradient(135deg,rgba(74,222,128,0.1),rgba(34,197,94,0.05));border:1px solid rgba(74,222,128,0.3);border-radius:20px;padding:24px;margin-bottom:24px;overflow:hidden}
+.alert-box::before{content:'';position:absolute;inset:-1px;border-radius:20px;background:linear-gradient(135deg,rgba(74,222,128,0.5),transparent,rgba(74,222,128,0.3));z-index:-1;animation:borderGlow 3s infinite alternate}
+@keyframes borderGlow{from{opacity:0.5}to{opacity:1}}
+
+.alert-icon{text-align:center;margin-bottom:16px}
+.gift-wrap{display:inline-block;position:relative}
+.gift{font-size:48px;animation:bounce 1s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.sparkles{position:absolute;inset:-15px;pointer-events:none}
+.sparkle{position:absolute;animation:sparkle 1.5s infinite}
+.sparkle:nth-child(1){top:0;left:20%;font-size:14px;animation-delay:0s}
+.sparkle:nth-child(2){top:20%;right:10%;font-size:12px;animation-delay:0.3s}
+.sparkle:nth-child(3){bottom:10%;left:10%;font-size:16px;animation-delay:0.6s}
+.sparkle:nth-child(4){bottom:20%;right:20%;font-size:10px;animation-delay:0.9s}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}}
+
+.alert-title{font-size:18px;font-weight:700;text-align:center;line-height:1.5}
+.alert-title .highlight{color:#4ade80}
+
+/* 메인 이미지 섹션 */
+.hero-image{margin:0 -20px 24px;text-align:center}
+.hero-image img{width:100%;max-width:400px;height:auto;animation:cardFloat 4s ease-in-out infinite}
+@keyframes cardFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+
+/* 3주년 배너 */
+.anniversary{background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden}
+.anniversary::before{content:'🎊';position:absolute;top:15px;left:20px;font-size:28px;animation:swing 2s infinite ease-in-out}
+.anniversary::after{content:'🎉';position:absolute;top:15px;right:20px;font-size:28px;animation:swing 2s infinite ease-in-out reverse}
+@keyframes swing{0%,100%{transform:rotate(-15deg)}50%{transform:rotate(15deg)}}
+
+.anni-badge{display:inline-block;background:#fff;color:#16a34a;font-size:12px;font-weight:900;padding:6px 16px;border-radius:20px;margin-bottom:12px}
+.anni-title{font-size:26px;font-weight:900;margin-bottom:8px}
+.anni-sub{display:inline-block;background:rgba(0,0,0,0.2);padding:8px 16px;border-radius:10px;font-size:13px}
+
+/* 보너스 카드 */
+.bonus-card{background:linear-gradient(180deg,#1a1a2e,#12121a);border:1px solid rgba(74,222,128,0.2);border-radius:20px;overflow:hidden;margin-bottom:24px}
+.bonus-header{display:flex;align-items:center;gap:14px;padding:20px;border-bottom:1px solid rgba(255,255,255,0.05)}
+.bonus-icon{width:50px;height:50px;background:linear-gradient(135deg,#4ade80,#22c55e);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.bonus-label .small{font-size:11px;color:#888}
+.bonus-label .large{font-size:18px;font-weight:800;color:#4ade80;margin-top:2px}
+
+.bonus-body{padding:20px}
+.bonus-box{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.15);border-radius:14px;padding:20px;text-align:center}
+.bonus-condition{font-size:13px;color:#aaa;margin-bottom:10px}
+.bonus-values{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.bonus-val{padding:10px 16px;border-radius:10px;font-size:18px;font-weight:800}
+.bonus-val.point{background:#22c55e;color:#fff}
+.bonus-val.plus{color:#4ade80;font-size:20px;background:none;padding:0}
+.bonus-val.gift{background:#8b5cf6;color:#fff}
+.bonus-note{font-size:10px;color:#666;margin-top:12px}
+
+/* 기프티콘 섹션 */
+.gifticon-section{margin-bottom:24px}
+.section-title{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:14px}
+.section-title span{font-size:18px}
+
+.method-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px;margin-bottom:16px;font-size:13px;line-height:1.9;color:#bbb}
+.method-box strong{color:#4ade80}
+
+.gift-list{display:flex;flex-direction:column;gap:10px}
+.gift-item{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px;transition:all 0.3s}
+.gift-item:hover{border-color:rgba(74,222,128,0.4);transform:translateX(5px)}
+.gift-item-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.gift-item-icon.cu{background:linear-gradient(135deg,#7c3aed,#6d28d9)}
+.gift-item-icon.baemin{background:linear-gradient(135deg,#2dd4bf,#14b8a6)}
+.gift-item-info{flex:1}
+.gift-item-name{font-size:14px;font-weight:600}
+.gift-item-price{font-size:12px;color:#4ade80;margin-top:2px}
+
+/* CTA 버튼 */
+.cta-btn{display:block;width:100%;padding:18px;background:linear-gradient(135deg,#4ade80,#22c55e);border:none;border-radius:14px;font-size:17px;font-weight:800;color:#000;text-decoration:none;text-align:center;position:relative;overflow:hidden;transition:all 0.3s;box-shadow:0 8px 30px rgba(74,222,128,0.4)}
+.cta-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(74,222,128,0.5)}
+.cta-btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:0.5s}
+.cta-btn:hover::after{left:150%}
+
+/* 푸터 */
+.footer{text-align:center;padding:30px 0;color:#555;font-size:11px}
+.footer-warning{background:rgba(255,100,100,0.08);border:1px solid rgba(255,100,100,0.15);border-radius:10px;padding:12px;margin-bottom:16px;font-size:10px;color:#999}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="particles">
+<div class="particle" style="left:5%;animation-delay:0s"></div>
+<div class="particle" style="left:15%;animation-delay:2s"></div>
+<div class="particle" style="left:25%;animation-delay:4s"></div>
+<div class="particle" style="left:35%;animation-delay:1s"></div>
+<div class="particle" style="left:45%;animation-delay:3s"></div>
+<div class="particle" style="left:55%;animation-delay:5s"></div>
+<div class="particle" style="left:65%;animation-delay:2.5s"></div>
+<div class="particle" style="left:75%;animation-delay:4.5s"></div>
+<div class="particle" style="left:85%;animation-delay:1.5s"></div>
+<div class="particle" style="left:95%;animation-delay:3.5s"></div>
+</div>
+
+<div class="container">
+
+<!-- 상단 동영상 -->
+<div class="hero-video">
+<video autoplay muted loop playsinline>
+<source src="luckyviki_video.mp4" type="video/mp4">
+</video>
+</div>
+
+<!-- 헤더 -->
+<header class="header">
+<h1 class="brand">LUCKY VIKI</h1>
+<p class="brand-sub">PREMIUM CASINO</p>
+</header>
+
+<div class="content">
+
+<!-- 알림 박스 -->
+<div class="alert-box">
+<div class="alert-icon">
+<div class="gift-wrap">
+<div class="gift">🎁</div>
+<div class="sparkles">
+<span class="sparkle">✨</span>
+<span class="sparkle">⭐</span>
+<span class="sparkle">✨</span>
+<span class="sparkle">⭐</span>
+</div>
+</div>
+</div>
+<h2 class="alert-title"><span class="highlight">럭키비키 3주년</span> 기념<br>보너스가 도착했습니다!</h2>
+</div>
+
+<!-- 메인 카드 이미지 -->
+<div class="hero-image">
+<img src="luckyviki_cards.png" alt="3주년 기념 카드">
+</div>
+
+<!-- 3주년 배너 -->
+<div class="anniversary">
+<div class="anni-badge">🎂 3rd ANNIVERSARY</div>
+<div class="anni-title">누구나 20 + 15</div>
+<div class="anni-sub">🎰 슬롯 전용 보너스</div>
+</div>
+
+<!-- 보너스 카드 -->
+<div class="bonus-card">
+<div class="bonus-header">
+<div class="bonus-icon">💰</div>
+<div class="bonus-label">
+<p class="small">3주년 특별 혜택</p>
+<p class="large">20% + 기프티콘 15%</p>
+</div>
+</div>
+<div class="bonus-body">
+<div class="bonus-box">
+<p class="bonus-condition">200,000원 입금 시</p>
+<div class="bonus-values">
+<span class="bonus-val point">100,000P</span>
+<span class="bonus-val plus">+</span>
+<span class="bonus-val gift">기프티콘 50,000원</span>
+</div>
+</div>
+<p class="bonus-note">* 슬롯 게임 전용 보너스</p>
+</div>
+</div>
+
+<!-- 기프티콘 섹션 -->
+<div class="gifticon-section">
+<h3 class="section-title"><span>🎁</span> 기프티콘 수령방법</h3>
+<div class="method-box">
+당사 <strong>고객센터</strong> 또는 <strong>공식 텔레그램</strong>으로<br>
+지급받으실 기프티콘 종류와 연락처 남겨주시면<br>
+<strong>당일 순차적으로 발송</strong>됩니다.
+</div>
+
+<h3 class="section-title"><span>🏷️</span> 기프티콘 종류</h3>
+<div class="gift-list">
+<div class="gift-item">
+<div class="gift-item-icon cu">🏪</div>
+<div class="gift-item-info">
+<p class="gift-item-name">CU 편의점 기프트</p>
+<p class="gift-item-price">50,000원</p>
+</div>
+</div>
+<div class="gift-item">
+<div class="gift-item-icon baemin">🛵</div>
+<div class="gift-item-info">
+<p class="gift-item-name">배달의민족</p>
+<p class="gift-item-price">50,000원</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- CTA 버튼 -->
+<a href="https://KK-01.COM" class="cta-btn" target="_blank">
+🎉 3주년 기념 보너스 지금 참여하기
+</a>
+
+<!-- 푸터 -->
+<footer class="footer">
+<div class="footer-warning">
+⚠️ 본 이벤트는 1인 1회 참여 가능하며, 부정 참여 시 보너스가 회수될 수 있습니다.
+</div>
+<p>© 2024 Lucky Viki. All rights reserved.</p>
+<p style="margin-top:6px">문의: @BIPLAYS</p>
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
